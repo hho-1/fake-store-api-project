@@ -41,8 +41,11 @@ function App() {
       let filterdProducts = products.filter((product) => {
         return product.category.toUpperCase() === buttonName;
       })
+      console.log(filteredProducts);
+      console.log(filterdProducts);
       filteredProducts = filterdProducts
       setProducts(filteredProducts)
+      console.log(products);
     }
     
   }
