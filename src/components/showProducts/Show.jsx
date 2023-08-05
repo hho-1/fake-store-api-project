@@ -9,6 +9,7 @@ const Show = ({title, image, price}) => {
             <img src={image} className="card-img-top" alt={title}/>
             <div className="card-body">
                 <p className="card-text">$ {price}</p>
+                <p className="item-name">$ {title}</p>
             </div>
         </div>
     </div>

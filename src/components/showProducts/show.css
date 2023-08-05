@@ -4,19 +4,26 @@
     background-color: white;
     margin: 1rem;
     border-radius: 10px;
-    opacity: 0.6;
+    opacity: 0.5;
     transition: all .2s;
     position: relative;
-    
+    overflow: hidden;
 }
 .card:hover{
     opacity: 1;
+}
+.card:hover .item-name{
+    animation: slide .8s ease-in-out 1 forwards;
+}
+.card:not(:hover) .item-name{
+    animation: slideReverse .8s ease-in-out 1 forwards;
 }
 
 img{
     width: 350px;
     height: 450px;
     border-radius: 10px;
+    position: relative;
 }
 .card-text{
     font-size: 1.2rem;
@@ -31,3 +38,28 @@ img{
     border-radius: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.item-name{
+    position: absolute;
+    bottom: 0%;
+    left: 100%;
+    background-color: black;
+    font-size: 1.6rem;
+    color: white;
+    z-index: -999;
+    padding: 1rem;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 350px;
+    
+}
+
+@keyframes slide {
+    from {bottom: 0%; left: 100%; z-index: 2;}
+    to {bottom: 0%; left: 0%;  z-index: 2;}
+  }
+
+@keyframes slideReverse {
+    from {bottom: 0%; left: 0%; z-index: 2;}
+    to {bottom: 0%; left: 100%;  z-index: -999;}
+  }
+  

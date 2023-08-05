@@ -29,31 +29,9 @@ function App() {
 
   }
   
-  /* const [filteredProducts, setFilteredProducts] = useState([]) */
-
-  let filteredProducts = products
-
-  async function handleButtonClick(buttonName) {
-
-    console.log(filteredProducts);
-
-    if(buttonName !== "ALL"){
-      let filterdProducts = products.filter((product) => {
-        return product.category.toUpperCase() === buttonName;
-      })
-      console.log(filteredProducts);
-      console.log(filterdProducts);
-      filteredProducts = filterdProducts
-      setProducts(filteredProducts)
-      console.log(products);
-    }
-    
-  }
-  
-  
   return (
-    <div className="App container-fluid">
-      <Header onClick={handleButtonClick}/>
+    <div className="App">
+      <Header/>
       <Main data={products}/>
     </div>
   );
